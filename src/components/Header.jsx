@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -10,7 +11,7 @@ function Header({ titlePage }) {
   console.log(verification);
   return (
     <div>
-      <h1 data-testid="page-title">{ titlePage }</h1>
+      <h1 data-testid="page-title">{titlePage}</h1>
       <Link to="/profile">
         <img
           src={ ProfileIcon }
@@ -18,12 +19,16 @@ function Header({ titlePage }) {
           data-testid="profile-top-btn"
         />
       </Link>
-      { !verification && (
+      {!verification && (
         <SearchBar />
       )}
     </div>
   );
 }
+
+Header.propTypes = {
+  titlePage: PropTypes.string.isRequired,
+};
 
 const mapStateToProps = (state) => ({
   titlePage: state.title.title,
