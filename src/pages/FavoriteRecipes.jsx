@@ -2,15 +2,16 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { changeTile } from '../redux/actions';
 
-function Meals({ dispatch }) {
+function FavoriteRecipes({ dispatch }) {
   useEffect(() => {
-    dispatch(changeTile('Meals'));
+    dispatch(changeTile('Favorite Recipes'));
   }, []);
+
   return (
     <div>
-      Meals
+      favorite
     </div>
   );
 }
 
-export default connect()(Meals);
+export default connect()(FavoriteRecipes);

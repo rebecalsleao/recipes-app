@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import Header from '../components/Header';
 import { changeTile } from '../redux/actions';
 
-function Meals({ dispatch }) {
+function Profile({ dispatch }) {
   useEffect(() => {
-    dispatch(changeTile('Meals'));
+    console.log('a');
+    dispatch(changeTile('Profile'));
   }, []);
+
   return (
     <div>
-      Meals
+      outracoisa
     </div>
   );
 }
 
-export default connect()(Meals);
+export default connect()(Profile);

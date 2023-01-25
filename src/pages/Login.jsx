@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { changeTile } from '../redux/actions';
 
 class Login extends React.Component {
   state = {
@@ -8,6 +9,11 @@ class Login extends React.Component {
     password: '',
     isButtonDisabled: true,
   };
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(changeTile('Login'));
+  }
 
   validateButton = () => {
     const { email, password } = this.state;
@@ -74,7 +80,7 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-  // dispatch: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
