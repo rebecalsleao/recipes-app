@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { changeTile } from '../redux/actions';
@@ -12,5 +13,9 @@ function Meals({ dispatch }) {
     </div>
   );
 }
+
+Meals.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
 
 export default connect()(Meals);

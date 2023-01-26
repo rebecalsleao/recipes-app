@@ -2,11 +2,11 @@ import { screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import renderWithRouterAndRedux from './helpers/renderWithRouterAndRedux';
 // import userEvent from '@testing-library/user-event';
-// import App from '../App';
+import App from '../App';
 
 describe('Header', () => {
   test('Testa o titulo da pagina em todas as rotas', () => {
-    const { history } = renderWithRouterAndRedux();
+    const { history } = renderWithRouterAndRedux(<App />);
 
     const routs = ['/', '/profile', '/meals', '/drinks', '/done-recipes'];
     const titles = ['Login', 'Profile', 'Meals', 'Drinks', 'Done Recipes', 'Favorite Recipes'];
