@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { changeTile } from '../redux/actions';
+import Footer from '../components/Footer';
 
 function Meals({ dispatch }) {
   useEffect(() => {
@@ -10,6 +11,7 @@ function Meals({ dispatch }) {
   return (
     <div>
       Meals
+      <Footer />
     </div>
   );
 }
